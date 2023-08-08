@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webchat-8db36": {
+      "hosting": {
+        "chatWeb": [
+          "webchat-8db36"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webchat-8db36"
+  }
+}

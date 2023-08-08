@@ -1,0 +1,73 @@
+<div class="containerchat">
+  <div class="settings-tray">
+    <img
+      class="profile-image"
+      src="https://cdn.discordapp.com/avatars/537267214017888286/18bd4753a5a0749fe28ea773550085be.png"
+      alt="Profile img"
+    />
+    <span class="settings-tray--right">
+      <i class="material-icons">cached</i>
+      <i class="material-icons">message</i>
+      <i class="material-icons">menu</i>
+    </span>
+  </div>
+  <div class="chat-panel">
+    <!-- <div class="row no-gutters">
+      <div class="chat-bubble chat-bubble--left">Hello dude!</div>
+    </div>
+    <div class="row no-gutters">
+      <div class="offset-md-9">
+        <div class="chat-bubble chat-bubble--right">Hello dude!</div>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="offset-md-9">
+        <div class="chat-bubble chat-bubble--right">Hello dude!</div>
+      </div>
+    </div> -->
+    <div *ngFor="let message of message">
+      <!-- <div
+        class="row no-gutters"
+        style="float: right; width: 70%"
+        *ngIf="message.senderid == idsender"
+      >
+        <div class="offset-md-9">
+          <div class="chat-bubble chat-bubble--right">
+            {{ message.content }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="row no-gutters"
+        style="float: left; width: 70%"
+        *ngIf="message.senderid != idsender"
+      >
+        <div class="chat-bubble chat-bubble--left">{{ message.content }}</div>
+      </div> -->
+      <div class="sender">
+        <div class="messsender" *ngIf="message.senderid == idsender">
+          {{ message.content }}
+        </div>
+      </div>
+      <div class="receiver">
+        <div class="messreceiver" *ngIf="message.senderid != idsender">
+          {{ message.content }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="chat-box-tray">
+        <i class="material-icons" id="icon">sentiment_very_satisfied</i>
+        <input
+          type="text"
+          placeholder="Type your message here..."
+          [formControl]="content"
+        />
+        <i class="material-icons">mic</i>
+        <i class="material-icons" (click)="sendUpdate()">send</i>
+      </div>
+    </div>
+  </div>
+</div>
